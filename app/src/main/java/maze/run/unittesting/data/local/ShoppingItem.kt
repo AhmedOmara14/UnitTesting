@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 data class ShoppingItem(
     var name: String,
     var amount: Int,
-    var price: Float,
+    var price: Double,
     var imgageRrl: String,
     @PrimaryKey(autoGenerate = true)
     val id: Int? = null
