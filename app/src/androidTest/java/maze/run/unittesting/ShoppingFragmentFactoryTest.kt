@@ -1,8 +1,9 @@
-package maze.run.unittesting.ui
+package maze.run.unittesting
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
 import com.bumptech.glide.RequestManager
+import maze.run.unittesting.repository.FakeShoppingRepositoryAndroidTest
 import maze.run.unittesting.ui.ViewModels.viewmodel
 import maze.run.unittesting.ui.adapter.adapterforImage
 import maze.run.unittesting.ui.adapter.adapterforShoppingItem
@@ -12,7 +13,7 @@ import maze.run.unittesting.ui.fragment.ShoppingFragment
 import javax.inject.Inject
 
 
-class ShoppingFragmentFactory
+class ShoppingFragmentFactoryTest
 @Inject
 constructor(
     val adapterforImage: adapterforImage,
@@ -24,7 +25,8 @@ constructor(
         return when(className){
             ImagePickFragment::class.java.name ->ImagePickFragment(adapterforImage)
             AddShoppingItemFragment::class.java.name ->AddShoppingItemFragment(glide)
-            ShoppingFragment::class.java.name ->ShoppingFragment(adapterforShoppingItem)
+            ShoppingFragment::class.java.name ->ShoppingFragment(adapterforShoppingItem,
+                viewmodel(FakeShoppingRepositoryAndroidTest()))
 
             else -> super.instantiate(classLoader, className)
         }

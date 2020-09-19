@@ -15,8 +15,8 @@ class viewmodel
 @ViewModelInject constructor(
     val repository: RepositoryInterface
 ):ViewModel() {
-    private val shoppingItem = repository.observeAllItems()
-    private val totalprice = repository.observeTotalPrice()
+     val shoppingItem = repository.observeAllItems()
+     val totalprice = repository.observeTotalPrice()
 
     private val _image = MutableLiveData<Resource<ImageResponce>>()
     val images: LiveData<Resource<ImageResponce>> = _image
@@ -54,7 +54,7 @@ class viewmodel
               _insertShoppingItemintoDB.postValue(Resource.error("please enter a valid amount",null))
               return
           }
-         val shoppingItem =ShoppingItem(name,amount,price.toFloat(),_curImageUrl.value.toString())
+         val shoppingItem =ShoppingItem(name,amount,price.toFloat(),_curImageUrl.value.toString() ?: "" )
          insertShoppingItemintoDB(shoppingItem)
          setCurImageUrl("")
          _insertShoppingItemintoDB.postValue(Resource.success(shoppingItem))

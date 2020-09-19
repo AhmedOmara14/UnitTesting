@@ -20,6 +20,7 @@
         android:text="NAME"
         android:layout_marginLeft="16dp"
         android:textSize="28sp"
+        android:textColor="#000"
         app:layout_constraintStart_toEndOf="@+id/tvShoppingItemAmount"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,12 +31,14 @@
         android:text="3x"
         android:layout_marginLeft="16dp"
         android:textSize="28sp"
+        android:textColor="#000"
         app:layout_constraintStart_toEndOf="@+id/ivShoppingImage1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvShoppingItemPrice"
         android:layout_width="wrap_content"
+        android:textColor="#000"
         android:layout_height="wrap_content"
         android:text="Price: 3€"
         android:layout_marginLeft="16dp"
