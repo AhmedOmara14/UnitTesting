@@ -2,11 +2,15 @@ package maze.run.unittesting.Di
 
 import android.content.Context
 import androidx.room.Room
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.android.synthetic.main.item_image.view.*
+import maze.run.unittesting.R
 import maze.run.unittesting.remote.respnoces.PaxbayAPI
 import maze.run.unittesting.repository.Repository
 import maze.run.unittesting.repository.RepositoryInterface
@@ -34,6 +38,15 @@ object AppModule {
         paxbayAPI: PaxbayAPI
     ) = Repository(dao, paxbayAPI) as RepositoryInterface
 
+    @Singleton
+    @Provides
+    fun provideGlideInstance(
+        @ApplicationContext context: Context
+    ) = Glide.with(context).setDefaultRequestOptions(
+        RequestOptions()
+            .placeholder(R.drawable.ic_baseline_image_24)
+            .error(R.drawable.ic_baseline_image_24)
+    )
 
     @Singleton
     @Provides

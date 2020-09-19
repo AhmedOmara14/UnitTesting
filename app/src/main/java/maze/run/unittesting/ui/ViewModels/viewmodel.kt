@@ -5,11 +5,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import maze.run.unittesting.remote.respnoces.ImageResponce
 import maze.run.unittesting.repository.RepositoryInterface
-import maze.run.unittesting.ui.other.Resource
+import maze.run.unittesting.other.Resource
 import maze.run.unittestingroomretrofitmmvm.data.local.ShoppingItem
 
 class viewmodel
@@ -44,7 +43,7 @@ class viewmodel
         repository.insert(shoppingItem)
     }
 
-      fun insertShoppingItemtoDB(name:String, amountstring :String, price:String){
+    fun insertShoppingItemtoDB(name:String, amountstring :String, price:String){
          if (name.isEmpty() || amountstring.isEmpty() || price.isEmpty()){
              _insertShoppingItemintoDB.postValue(Resource.error("the field must not be empty",null))
          }
@@ -55,7 +54,7 @@ class viewmodel
               _insertShoppingItemintoDB.postValue(Resource.error("please enter a valid amount",null))
               return
           }
-         val shoppingItem =ShoppingItem(name,amount,price.toDouble(),_curImageUrl.value.toString())
+         val shoppingItem =ShoppingItem(name,amount,price.toFloat(),_curImageUrl.value.toString())
          insertShoppingItemintoDB(shoppingItem)
          setCurImageUrl("")
          _insertShoppingItemintoDB.postValue(Resource.success(shoppingItem))

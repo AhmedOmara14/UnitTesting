@@ -6,7 +6,7 @@ import maze.run.unittesting.remote.respnoces.ImageResponce
 import maze.run.unittesting.other.Resource
 import maze.run.unittestingroomretrofitmmvm.data.local.ShoppingItem
 
-class FakeShoppingRepository : RepositoryInterface {
+class FakeShoppingRepositoryAndroidTest : RepositoryInterface {
 
     private val shoppingItemm = mutableListOf<ShoppingItem>()
 

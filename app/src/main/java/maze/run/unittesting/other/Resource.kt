@@ -1,4 +1,4 @@
-package maze.run.unittesting.ui.other
+package maze.run.unittesting.other
 
 
 

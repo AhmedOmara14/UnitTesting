@@ -1,15 +1,12 @@
 package maze.run.unittesting.ui.ViewModels
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.lifecycle.ViewModelProvider
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import maze.run.unittesting.getOrAwaitValueTest
 import maze.run.unittesting.mainCoroutineRule
 import maze.run.unittesting.repository.FakeShoppingRepository
-import maze.run.unittesting.repository.Repository
-import maze.run.unittesting.ui.other.Status
-import org.junit.After
+import maze.run.unittesting.other.Status
 import org.junit.Before
 import org.junit.Rule
 

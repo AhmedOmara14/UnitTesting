@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/shoppingFragment">
+
+    <fragment
+        android:id="@+id/shoppingFragment"
+        android:name="maze.run.unittesting.ui.fragment.ShoppingFragment"
+        android:label="fragment_shopping"
+        tools:layout="@layout/fragment_shopping" >
+        <action
+            android:id="@+id/action_shoppingFragment_to_addShoppingItemFragment"
+            app:destination="@id/addShoppingItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addShoppingItemFragment"
+        android:name="maze.run.unittesting.ui.fragment.AddShoppingItemFragment"
+        android:label="fragment_add_shopping_item"
+        tools:layout="@layout/fragment_add_shopping_item" >
+        <action
+            android:id="@+id/action_addShoppingItemFragment_to_imagePickFragment"
+            app:destination="@id/imagePickFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imagePickFragment"
+        android:name="maze.run.unittesting.ui.fragment.ImagePickFragment"
+        android:label="fragment_image_pick"
+        tools:layout="@layout/fragment_image_pick" />
+</navigation>

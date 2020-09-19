@@ -3,7 +3,7 @@ package maze.run.unittesting.repository
 import androidx.lifecycle.LiveData
 import maze.run.unittesting.remote.respnoces.ImageResponce
 import maze.run.unittesting.remote.respnoces.PaxbayAPI
-import maze.run.unittesting.ui.other.Resource
+import maze.run.unittesting.other.Resource
 import maze.run.unittestingroomretrofitmmvm.data.local.ShoppingDao
 import maze.run.unittestingroomretrofitmmvm.data.local.ShoppingItem
 import javax.inject.Inject
